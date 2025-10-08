@@ -44,7 +44,7 @@ export default function About() {
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <Typography variant="h3" sx={{ fontWeight: 700, color: '#0f172a', mb: 3, textAlign: 'center', fontSize: { xs: '1.75rem', md: '2.5rem' } }}>எங்கள் நோக்கம்</Typography>
-          <Typography variant="body1" sx={{ color: '#64748b', textAlign: 'center', maxWidth: 800, mx: 'auto', mb: 8, fontSize: '1.125rem' }}>{event?.mission}</Typography>
+          <Typography variant="body1" sx={{ color: '#64748b', textAlign: 'center', maxWidth: 800, mx: 'auto', mb: 8, fontSize: '1.125rem' }}>{event?.about?.mission || event?.mission}</Typography>
         </motion.div>
 
         <Grid container spacing={4} sx={{ mb: { xs: 8, md: 12 } }}>
@@ -67,7 +67,7 @@ export default function About() {
           <Card sx={{ borderRadius: 3, overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', border: '1px solid #f1f5f9', bgcolor: '#fff' }}>
             <CardContent sx={{ p: { xs: 4, md: 6 } }}>
               <Typography variant="h4" sx={{ fontWeight: 700, color: '#0f172a', mb: 3, textAlign: 'center', fontSize: { xs: '1.75rem', md: '2rem' } }}>நமது பார்வை</Typography>
-              <Typography variant="body1" sx={{ color: '#64748b', textAlign: 'center', maxWidth: 800, mx: 'auto', fontSize: '1.0625rem' }}>{event?.description}</Typography>
+              <Typography variant="body1" sx={{ color: '#64748b', textAlign: 'center', maxWidth: 800, mx: 'auto', fontSize: '1.0625rem' }}>{event?.about?.vision || event?.description}</Typography>
             </CardContent>
           </Card>
         </motion.div>
