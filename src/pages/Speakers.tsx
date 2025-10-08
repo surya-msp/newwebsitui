@@ -7,14 +7,28 @@ export default function Speakers() {
   const speakers = speakersData;
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa' }}>
+    <Box sx={{ bgcolor: '#f8fafc', minHeight: '100vh' }}>
       <Box
         sx={{
-          background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)',
-          py: 10,
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+          py: { xs: 8, md: 12 },
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        <Container maxWidth="lg">
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            opacity: 0.05,
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -26,7 +40,7 @@ export default function Speakers() {
                 fontWeight: 800,
                 color: '#fff',
                 textAlign: 'center',
-                fontSize: { xs: '2rem', md: '3rem' },
+                fontSize: { xs: '2.5rem', md: '3.5rem' },
                 mb: 2,
               }}
             >
@@ -35,9 +49,10 @@ export default function Speakers() {
             <Typography
               variant="h6"
               sx={{
-                color: '#FFF',
+                color: 'rgba(255,255,255,0.85)',
                 textAlign: 'center',
-                opacity: 0.9,
+                fontSize: { xs: '1.1rem', md: '1.25rem' },
+                fontWeight: 400,
               }}
             >
               உலகளாவிய தமிழர் வணிக தலைவர்கள்
@@ -46,7 +61,7 @@ export default function Speakers() {
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
         <Grid container spacing={4}>
           {speakers?.map((speaker: any, index: number) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={speaker.id}>
@@ -58,25 +73,27 @@ export default function Speakers() {
               >
                 <Card
                   sx={{
-                    height: '100%',
-                    minHeight: 380,
-                    borderRadius: 4,
-                    boxShadow: '0 4px 20px rgba(139, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease',
+                    height: 420,
+                    borderRadius: 3,
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                    border: '1px solid #f1f5f9',
+                    transition: 'all 0.4s ease',
                     overflow: 'hidden',
+                    display: 'flex',
+                    flexDirection: 'column',
                     '&:hover': {
-                      transform: 'translateY(-15px) scale(1.02)',
-                      boxShadow: '0 12px 40px rgba(139, 0, 0, 0.25)',
+                      transform: 'translateY(-12px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
                       '& .speaker-image': {
-                        transform: 'scale(1.1)',
+                        transform: 'scale(1.08)',
                       },
                       '& .speaker-overlay': {
-                        opacity: 0.9,
+                        opacity: 0.85,
                       },
                     },
                   }}
                 >
-                  <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+                  <Box sx={{ position: 'relative', overflow: 'hidden', height: 280 }}>
                     <CardMedia
                       component="img"
                       height="280"
@@ -85,6 +102,7 @@ export default function Speakers() {
                       className="speaker-image"
                       sx={{
                         transition: 'transform 0.5s ease',
+                        objectFit: 'cover',
                       }}
                     />
                     <Box
@@ -95,34 +113,39 @@ export default function Speakers() {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        background: 'linear-gradient(180deg, transparent 0%, rgba(139, 0, 0, 0.8) 100%)',
-                        opacity: 0.7,
+                        background: 'linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.9) 100%)',
+                        opacity: 0.75,
                         transition: 'opacity 0.3s ease',
                       }}
                     />
                     <Box
                       sx={{
                         position: 'absolute',
-                        bottom: 10,
-                        left: 10,
-                        right: 10,
+                        bottom: 16,
+                        left: 16,
+                        right: 16,
                         zIndex: 1,
                       }}
                     >
                       <Box
                         sx={{
-                          display: 'flex',
+                          display: 'inline-flex',
                           alignItems: 'center',
                           gap: 0.5,
-                          mb: 0.5,
+                          bgcolor: 'rgba(249, 115, 22, 0.9)',
+                          backdropFilter: 'blur(8px)',
+                          px: 1.5,
+                          py: 0.5,
+                          borderRadius: 2,
                         }}
                       >
-                        <Public sx={{ fontSize: '0.9rem', color: '#ff6f00' }} />
+                        <Public sx={{ fontSize: '0.875rem', color: '#fff' }} />
                         <Typography
                           variant="caption"
                           sx={{
-                            color: '#ff6f00',
+                            color: '#fff',
                             fontWeight: 600,
+                            fontSize: '0.8125rem',
                           }}
                         >
                           {speaker.country}
@@ -131,14 +154,14 @@ export default function Speakers() {
                     </Box>
                   </Box>
 
-                  <CardContent sx={{ p: 2.5 }}>
+                  <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                     <Typography
                       variant="h6"
                       sx={{
                         fontWeight: 700,
-                        color: '#1a237e',
+                        color: '#0f172a',
                         mb: 1,
-                        fontSize: '1.1rem',
+                        fontSize: '1.125rem',
                       }}
                     >
                       {speaker.name}
@@ -146,10 +169,10 @@ export default function Speakers() {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: '#555',
+                        color: '#64748b',
                         fontWeight: 600,
-                        mb: 1,
-                        fontSize: '0.9rem',
+                        mb: 1.5,
+                        fontSize: '0.875rem',
                       }}
                     >
                       {speaker.role}
@@ -158,16 +181,17 @@ export default function Speakers() {
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: 0.5,
-                        mt: 1.5,
+                        gap: 0.75,
+                        mt: 'auto',
                       }}
                     >
-                      <Business sx={{ fontSize: '1rem', color: '#1a237e' }} />
+                      <Business sx={{ fontSize: '1rem', color: '#f97316' }} />
                       <Typography
                         variant="caption"
                         sx={{
-                          color: '#666',
-                          fontSize: '0.85rem',
+                          color: '#64748b',
+                          fontSize: '0.8125rem',
+                          lineHeight: 1.5,
                         }}
                       >
                         {speaker.company}

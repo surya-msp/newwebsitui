@@ -27,7 +27,7 @@ export default function Header() {
         position="sticky"
         elevation={trigger ? 4 : 0}
         sx={{
-          backgroundColor: trigger ? 'rgba(26, 35, 126, 0.98)' : 'rgba(26, 35, 126, 0.95)',
+          backgroundColor: trigger ? 'rgba(15, 23, 42, 0.98)' : 'rgba(15, 23, 42, 0.95)',
           backdropFilter: 'blur(10px)',
           transition: 'all 0.3s ease',
         }}
@@ -55,14 +55,14 @@ export default function Header() {
                       width: 45,
                       height: 45,
                       borderRadius: '12px',
-                      background: 'linear-gradient(135deg, #ff6f00 0%, #ffa040 100%)',
+                      background: 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontWeight: 900,
                       fontSize: '1.5rem',
                       color: '#fff',
-                      boxShadow: '0 4px 15px rgba(255, 111, 0, 0.3)',
+                      boxShadow: '0 4px 15px rgba(249, 115, 22, 0.3)',
                     }}
                   >
                     த
@@ -91,7 +91,7 @@ export default function Header() {
                     component={Link}
                     to={item.path}
                     sx={{
-                      color: location.pathname === item.path ? '#ff6f00' : '#fff',
+                      color: location.pathname === item.path ? '#f97316' : '#fff',
                       fontWeight: location.pathname === item.path ? 700 : 500,
                       px: 2,
                       py: 1,
@@ -104,13 +104,13 @@ export default function Header() {
                         transform: 'translateX(-50%)',
                         width: location.pathname === item.path ? '70%' : '0%',
                         height: '3px',
-                        backgroundColor: '#ff6f00',
+                        backgroundColor: '#f97316',
                         borderRadius: '2px',
                         transition: 'width 0.3s ease',
                       },
                       '&:hover': {
                         backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                        color: '#ffa040',
+                        color: '#fb923c',
                         '&::after': {
                           width: '70%',
                         },
@@ -143,7 +143,7 @@ export default function Header() {
           display: { md: 'none' },
           '& .MuiDrawer-paper': {
             width: 280,
-            backgroundColor: '#1a237e',
+            backgroundColor: '#0f172a',
           },
         }}
       >
@@ -161,10 +161,10 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 sx={{
                   py: 2,
-                  backgroundColor: location.pathname === item.path ? 'rgba(255, 111, 0, 0.2)' : 'transparent',
-                  borderLeft: location.pathname === item.path ? '4px solid #ff6f00' : '4px solid transparent',
+                  backgroundColor: location.pathname === item.path ? 'rgba(249, 115, 22, 0.2)' : 'transparent',
+                  borderLeft: location.pathname === item.path ? '4px solid #f97316' : '4px solid transparent',
                   '&:hover': {
-                    backgroundColor: 'rgba(255, 111, 0, 0.1)',
+                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
                   },
                 }}
               >

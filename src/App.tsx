@@ -22,25 +22,29 @@ const queryClient = new QueryClient({
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"Noto Sans Tamil", "Inter", "Roboto", sans-serif',
-    h1: { fontWeight: 800 },
-    h2: { fontWeight: 700 },
-    h3: { fontWeight: 700 },
-    h4: { fontWeight: 600 },
+    fontFamily: '"Inter", "Noto Sans Tamil", "Roboto", sans-serif',
+    h1: { fontWeight: 800, lineHeight: 1.2 },
+    h2: { fontWeight: 700, lineHeight: 1.2 },
+    h3: { fontWeight: 700, lineHeight: 1.3 },
+    h4: { fontWeight: 600, lineHeight: 1.4 },
+    h5: { fontWeight: 600, lineHeight: 1.5 },
+    h6: { fontWeight: 600, lineHeight: 1.5 },
+    body1: { lineHeight: 1.7 },
+    body2: { lineHeight: 1.6 },
   },
   palette: {
     primary: {
-      main: '#1a237e',
-      light: '#534bae',
-      dark: '#000051',
+      main: '#0f172a',
+      light: '#334155',
+      dark: '#020617',
     },
     secondary: {
-      main: '#ff6f00',
-      light: '#ffa040',
-      dark: '#c43e00',
+      main: '#f97316',
+      light: '#fb923c',
+      dark: '#ea580c',
     },
     background: {
-      default: '#f8f9fa',
+      default: '#ffffff',
       paper: '#ffffff',
     },
   },

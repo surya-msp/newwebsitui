@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { motion } from 'framer-motion';
-import { LocationOn, Hotel, Restaurant, Wifi, FitnessCenter, Pool, LocalParking, BusinessCenter, CheckCircle } from '@mui/icons-material';
+import { LocationOn, Hotel, Restaurant, Wifi, FitnessCenter, Pool, LocalParking, BusinessCenter } from '@mui/icons-material';
 import eventData from '../mock/event.json';
 
 export default function Venue() {
@@ -19,42 +19,50 @@ export default function Venue() {
 
   const highlights = [
     {
-      icon: <Hotel sx={{ fontSize: 50 }} />,
+      icon: <Hotel sx={{ fontSize: 48 }} />,
       title: event?.venue?.name,
       description: 'மலேசியாவின் மையத்தில் அமைந்துள்ள பிரீமியம் ஹோட்டல்',
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     },
     {
-      icon: <LocationOn sx={{ fontSize: 50 }} />,
+      icon: <LocationOn sx={{ fontSize: 48 }} />,
       title: event?.venue?.location,
       description: 'கோலாலம்பூர் நகர மையத்திலிருந்து எளிதில் அணுகக்கூடியது',
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     },
     {
-      icon: <BusinessCenter sx={{ fontSize: 50 }} />,
+      icon: <BusinessCenter sx={{ fontSize: 48 }} />,
       title: '1000+ இருக்கைகள்',
       description: 'விரிவான மாநாட்டு அரங்குகள் மற்றும் கூட்ட அறைகள்',
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     },
     {
-      icon: <Restaurant sx={{ fontSize: 50 }} />,
+      icon: <Restaurant sx={{ fontSize: 48 }} />,
       title: '5 உணவக வசதிகள்',
       description: 'பல்வேறு வகையான சர்வதேச உணவு வகைகள்',
-      gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     },
   ];
 
   return (
-    <Box sx={{ bgcolor: '#f8f9fa' }}>
+    <Box sx={{ bgcolor: '#f8fafc', minHeight: '100vh' }}>
       <Box
         sx={{
-          background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)',
-          py: 10,
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+          py: { xs: 8, md: 12 },
           position: 'relative',
           overflow: 'hidden',
         }}
       >
-        <Container maxWidth="lg">
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            opacity: 0.05,
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +74,7 @@ export default function Venue() {
                 fontWeight: 800,
                 color: '#fff',
                 textAlign: 'center',
-                fontSize: { xs: '2rem', md: '3rem' },
+                fontSize: { xs: '2.5rem', md: '3.5rem' },
                 mb: 2,
               }}
             >
@@ -75,8 +83,10 @@ export default function Venue() {
             <Typography
               variant="h6"
               sx={{
-                color: 'rgba(255,255,255,0.9)',
+                color: 'rgba(255,255,255,0.85)',
                 textAlign: 'center',
+                fontSize: { xs: '1.1rem', md: '1.25rem' },
+                fontWeight: 400,
                 maxWidth: 700,
                 mx: 'auto',
               }}
@@ -87,8 +97,8 @@ export default function Venue() {
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ py: 10 }}>
-        <Grid container spacing={4} sx={{ mb: 10 }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+        <Grid container spacing={4} sx={{ mb: { xs: 8, md: 12 } }}>
           {highlights.map((highlight, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <motion.div
@@ -99,39 +109,38 @@ export default function Venue() {
               >
                 <Card
                   sx={{
-                    height: '100%',
-                    minHeight: 280,
-                    borderRadius: 4,
+                    height: 320,
+                    borderRadius: 3,
                     overflow: 'hidden',
-                    boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
-                    transition: 'all 0.4s ease',
-                    border: '1px solid rgba(0,0,0,0.05)',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                    border: '1px solid #f1f5f9',
                     display: 'flex',
                     flexDirection: 'column',
+                    transition: 'all 0.4s ease',
                     '&:hover': {
-                      transform: 'translateY(-15px) scale(1.02)',
-                      boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+                      transform: 'translateY(-12px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
                       '& .icon-box': {
-                        transform: 'scale(1.1) rotate(5deg)',
+                        transform: 'scale(1.1)',
+                        bgcolor: '#f97316',
                       },
                     },
                   }}
                 >
-                  <CardContent sx={{ textAlign: 'center', py: 5, px: 3, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                  <CardContent sx={{ textAlign: 'center', py: 5, px: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <Box
                       className="icon-box"
                       sx={{
-                        width: 90,
-                        height: 90,
+                        width: 88,
+                        height: 88,
                         borderRadius: '20px',
-                        background: highlight.gradient,
+                        bgcolor: '#0f172a',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         margin: '0 auto',
                         mb: 3,
                         color: '#fff',
-                        boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
                         transition: 'all 0.4s ease',
                       }}
                     >
@@ -141,9 +150,9 @@ export default function Venue() {
                       variant="h6"
                       sx={{
                         fontWeight: 700,
-                        color: '#1a237e',
+                        color: '#0f172a',
                         mb: 2,
-                        fontSize: '1.2rem',
+                        fontSize: '1.125rem',
                       }}
                     >
                       {highlight.title}
@@ -151,9 +160,8 @@ export default function Venue() {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: '#666',
-                        lineHeight: 1.7,
-                        fontSize: '0.95rem',
+                        color: '#64748b',
+                        fontSize: '0.9375rem',
                       }}
                     >
                       {highlight.description}
@@ -176,8 +184,9 @@ export default function Venue() {
               <Card
                 sx={{
                   height: '100%',
-                  borderRadius: 4,
-                  boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
+                  borderRadius: 3,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  border: '1px solid #f1f5f9',
                 }}
               >
                 <CardContent sx={{ p: 4 }}>
@@ -185,22 +194,23 @@ export default function Venue() {
                     variant="h4"
                     sx={{
                       fontWeight: 700,
-                      color: '#1a237e',
-                      mb: 3,
+                      color: '#0f172a',
+                      mb: 4,
+                      fontSize: { xs: '1.75rem', md: '2rem' },
                     }}
                   >
                     வசதிகள்
                   </Typography>
                   <List>
                     {venueFeatures.map((feature, index) => (
-                      <ListItem key={index} sx={{ px: 0 }}>
-                        <ListItemIcon sx={{ minWidth: 40 }}>
+                      <ListItem key={index} sx={{ px: 0, py: 1.5 }}>
+                        <ListItemIcon sx={{ minWidth: 48 }}>
                           <Box
                             sx={{
-                              width: 32,
-                              height: 32,
-                              borderRadius: '8px',
-                              background: 'linear-gradient(135deg, #ff6f00 0%, #ffa040 100%)',
+                              width: 40,
+                              height: 40,
+                              borderRadius: '10px',
+                              bgcolor: '#f97316',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
@@ -214,8 +224,9 @@ export default function Venue() {
                           primary={feature.text}
                           primaryTypographyProps={{
                             sx: {
-                              fontWeight: 500,
-                              color: '#666',
+                              fontWeight: 600,
+                              color: '#0f172a',
+                              fontSize: '1rem',
                             },
                           }}
                         />
@@ -237,8 +248,9 @@ export default function Venue() {
               <Card
                 sx={{
                   height: '100%',
-                  borderRadius: 4,
-                  boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
+                  borderRadius: 3,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  border: '1px solid #f1f5f9',
                 }}
               >
                 <CardContent sx={{ p: 4 }}>
@@ -246,56 +258,80 @@ export default function Venue() {
                     variant="h4"
                     sx={{
                       fontWeight: 700,
-                      color: '#1a237e',
-                      mb: 3,
+                      color: '#0f172a',
+                      mb: 4,
+                      fontSize: { xs: '1.75rem', md: '2rem' },
                     }}
                   >
                     முகவரி
                   </Typography>
-                  <Box sx={{ mb: 3 }}>
+                  <Box sx={{ mb: 4 }}>
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
-                      <LocationOn sx={{ color: '#ff6f00', mr: 2, mt: 0.5 }} />
+                      <Box
+                        sx={{
+                          width: 40,
+                          height: 40,
+                          borderRadius: '10px',
+                          bgcolor: '#f97316',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          mr: 2,
+                          flexShrink: 0,
+                        }}
+                      >
+                        <LocationOn sx={{ color: '#fff', fontSize: '1.25rem' }} />
+                      </Box>
                       <Box>
-                        <Typography variant="body1" sx={{ fontWeight: 600, color: '#333', mb: 0.5 }}>
+                        <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mb: 0.5, fontSize: '1.125rem' }}>
                           {event?.venue?.name}
                         </Typography>
-                        <Typography variant="body2" sx={{ color: '#666', lineHeight: 1.7 }}>
+                        <Typography variant="body2" sx={{ color: '#64748b', fontSize: '0.9375rem' }}>
                           {event?.venue?.address}
                         </Typography>
                       </Box>
                     </Box>
                   </Box>
 
-                  <Typography
-                    variant="h6"
+                  <Box
                     sx={{
-                      fontWeight: 700,
-                      color: '#1a237e',
-                      mb: 2,
-                      mt: 4,
+                      bgcolor: '#f8fafc',
+                      p: 3,
+                      borderRadius: 2,
+                      border: '1px solid #e2e8f0',
                     }}
                   >
-                    எப்படி வருவது
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: '#666',
-                      lineHeight: 1.7,
-                      mb: 2,
-                    }}
-                  >
-                    <strong>விமான நிலையத்திலிருந்து:</strong> கோலாலம்பூர் சர்வதேச விமான நிலையத்திலிருந்து 30 நிமிடங்கள் (25 கிமீ)
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: '#666',
-                      lineHeight: 1.7,
-                    }}
-                  >
-                    <strong>நகர மையத்திலிருந்து:</strong> KL Sentral இலிருந்து 15 நிமிடங்கள் (8 கிமீ)
-                  </Typography>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 700,
+                        color: '#0f172a',
+                        mb: 2,
+                        fontSize: '1.125rem',
+                      }}
+                    >
+                      எப்படி வருவது
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#64748b',
+                        mb: 2,
+                        fontSize: '0.9375rem',
+                      }}
+                    >
+                      <strong>விமான நிலையத்திலிருந்து:</strong> கோலாலம்பூர் சர்வதேச விமான நிலையத்திலிருந்து 30 நிமிடங்கள் (25 கிமீ)
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#64748b',
+                        fontSize: '0.9375rem',
+                      }}
+                    >
+                      <strong>நகர மையத்திலிருந்து:</strong> KL Sentral இலிருந்து 15 நிமிடங்கள் (8 கிமீ)
+                    </Typography>
+                  </Box>
                 </CardContent>
               </Card>
             </motion.div>

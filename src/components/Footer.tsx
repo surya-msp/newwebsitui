@@ -6,7 +6,7 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        background: 'linear-gradient(180deg, #1a237e 0%, #0d1642 100%)',
+        background: 'linear-gradient(180deg, #0f172a 0%, #020617 100%)',
         color: '#FFF',
         py: 8,
         mt: 10,
@@ -20,7 +20,7 @@ export default function Footer() {
                 width: 50,
                 height: 50,
                 borderRadius: '14px',
-                background: 'linear-gradient(135deg, #ff6f00 0%, #ffa040 100%)',
+                background: 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -28,7 +28,7 @@ export default function Footer() {
                 fontSize: '1.8rem',
                 color: '#fff',
                 mb: 2,
-                boxShadow: '0 4px 15px rgba(255, 111, 0, 0.3)',
+                boxShadow: '0 4px 15px rgba(249, 115, 22, 0.3)',
               }}
             >
               த
@@ -42,7 +42,7 @@ export default function Footer() {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2.5, color: '#ff6f00' }}>
+            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2.5, color: '#f97316' }}>
               தொடர்பு
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, gap: 1.5 }}>
@@ -51,13 +51,13 @@ export default function Footer() {
                   width: 35,
                   height: 35,
                   borderRadius: '8px',
-                  background: 'rgba(255, 111, 0, 0.15)',
+                  background: 'rgba(249, 115, 22, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <Email sx={{ fontSize: '1.1rem', color: '#ff6f00' }} />
+                <Email sx={{ fontSize: '1.1rem', color: '#f97316' }} />
               </Box>
               <Typography variant="body2">info@tamilarbusiness.org</Typography>
             </Box>
@@ -67,13 +67,13 @@ export default function Footer() {
                   width: 35,
                   height: 35,
                   borderRadius: '8px',
-                  background: 'rgba(255, 111, 0, 0.15)',
+                  background: 'rgba(249, 115, 22, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <Phone sx={{ fontSize: '1.1rem', color: '#ff6f00' }} />
+                <Phone sx={{ fontSize: '1.1rem', color: '#f97316' }} />
               </Box>
               <Typography variant="body2">+60 12 345 6789</Typography>
             </Box>
@@ -83,20 +83,20 @@ export default function Footer() {
                   width: 35,
                   height: 35,
                   borderRadius: '8px',
-                  background: 'rgba(255, 111, 0, 0.15)',
+                  background: 'rgba(249, 115, 22, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <Language sx={{ fontSize: '1.1rem', color: '#ff6f00' }} />
+                <Language sx={{ fontSize: '1.1rem', color: '#f97316' }} />
               </Box>
               <Typography variant="body2">www.tamilarbusiness.org</Typography>
             </Box>
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2.5, color: '#ff6f00' }}>
+            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2.5, color: '#f97316' }}>
               எங்களைப் பின்தொடரவும்
             </Typography>
             <Box sx={{ display: 'flex', gap: 1.5 }}>
@@ -111,9 +111,9 @@ export default function Footer() {
                     color: '#FFF',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     '&:hover': {
-                      background: 'linear-gradient(135deg, #ff6f00 0%, #ffa040 100%)',
+                      background: 'linear-gradient(135deg, #f97316 0%, #fb923c 100%)',
                       transform: 'translateY(-5px)',
-                      boxShadow: '0 8px 20px rgba(255, 111, 0, 0.3)',
+                      boxShadow: '0 8px 20px rgba(249, 115, 22, 0.3)',
                     },
                     transition: 'all 0.3s ease',
                   }}
