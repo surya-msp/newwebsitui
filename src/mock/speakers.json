@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "திரு. ராஜேஷ் குமார்",
+    "role": "தலைமை நிர்வாக அதிகாரி",
+    "company": "குளோபல் டெக் சொலூஷன்ஸ்",
+    "country": "சிங்கப்பூர்",
+    "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 2,
+    "name": "திருமதி. பிரியா சுந்தரம்",
+    "role": "நிறுவனர் மற்றும் தலைமை நிர்வாகி",
+    "company": "ஃபின்டெக் இன்னோவேஷன்ஸ்",
+    "country": "இந்தியா",
+    "image": "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 3,
+    "name": "திரு. கண்ணன் பிள்ளை",
+    "role": "மூத்த துணைத் தலைவர்",
+    "company": "மலேசிய வணிக சங்கம்",
+    "country": "மலேசியா",
+    "image": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 4,
+    "name": "திருமதி. லட்சுமி நாயர்",
+    "role": "முதலீட்டு இயக்குனர்",
+    "company": "வென்ச்சர் கேபிடல் பார்ட்னர்ஸ்",
+    "country": "ஐக்கிய அரபு எமிரேட்ஸ்",
+    "image": "https://images.pexels.com/photos/3756525/pexels-photo-3756525.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 5,
+    "name": "திரு. முருகன் சந்திரன்",
+    "role": "தொழில் முனைவோர் மற்றும் ஆலோசகர்",
+    "company": "கிளவுட் சாலுசன்ஸ் கிரூப்",
+    "country": "ஆஸ்திரேலியா",
+    "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 6,
+    "name": "திருமதி. அனிதா ராமன்",
+    "role": "உணவு மற்றும் பானங்கள் தொழில் நிபுணர்",
+    "company": "தமிழ் குலினரி எண்டர்பிரைசஸ்",
+    "country": "கனடா",
+    "image": "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 7,
+    "name": "திரு. செல்வன் இராமு",
+    "role": "ஏற்றுமதி-இறக்குமதி நிபுணர்",
+    "company": "இண்டர்நேஷனல் டிரேட் லிங்க்ஸ்",
+    "country": "இலங்கை",
+    "image": "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 8,
+    "name": "திருமதி. கவிதா மாரி",
+    "role": "சுற்றுச்சூழல் வணிக முன்னோடி",
+    "company": "கிரீன் எர்த் வென்ச்சர்ஸ்",
+    "country": "இங்கிலாந்து",
+    "image": "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 9,
+    "name": "திரு. விக்னேஷ் சர்மா",
+    "role": "நிதி ஆலோசகர்",
+    "company": "வெல்த் மேனேஜ்மெண்ட் கன்சல்டிங்",
+    "country": "அமெரிக்கா",
+    "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 10,
+    "name": "திருமதி. தீபா நாகராஜன்",
+    "role": "டிஜிட்டல் மார்கெட்டிங் நிபுணர்",
+    "company": "டிஜி கிராஃப்ட் ஏஜென்சி",
+    "country": "ஜெர்மனி",
+    "image": "https://images.pexels.com/photos/3756523/pexels-photo-3756523.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 11,
+    "name": "திரு. அருண் குப்தா",
+    "role": "வன்பொருள் மற்றும் உற்பத்தி",
+    "company": "மேனுஃபாக்சர்ஸ் கிலட்",
+    "country": "தென் ஆப்பிரிக்கா",
+    "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "id": 12,
+    "name": "திருமதி. சரண்யா ராஜ்",
+    "role": "கல்வி தொழில்நுட்ப முன்னோடி",
+    "company": "எட்யூடெக் கிளோபல்",
+    "country": "நியூசிலாந்து",
+    "image": "https://images.pexels.com/photos/3771110/pexels-photo-3771110.jpeg?auto=compress&cs=tinysrgb&w=400"
+  }
+]

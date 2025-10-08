@@ -1,0 +1,337 @@
+import { Box, Container, Typography, TextField, Button, Card, CardContent, Grid } from '@mui/material';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Email, Phone, LocationOn, Send } from '@mui/icons-material';
+import eventData from '../mock/event.json';
+
+export default function Contact() {
+  const event = eventData;
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
+
+  const contactInfo = [
+    {
+      icon: <Email sx={{ fontSize: 40 }} />,
+      title: 'மின்னஞ்சல்',
+      value: 'info@tamilarbusiness.org',
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    },
+    {
+      icon: <Phone sx={{ fontSize: 40 }} />,
+      title: 'தொலைபேசி',
+      value: '+60 12 345 6789',
+      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    },
+    {
+      icon: <LocationOn sx={{ fontSize: 40 }} />,
+      title: 'இடம்',
+      value: event?.venue?.location,
+      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    },
+  ];
+
+  return (
+    <Box sx={{ bgcolor: '#f8f9fa' }}>
+      <Box
+        sx={{
+          background: 'linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)',
+          py: 10,
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <Container maxWidth="lg">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 800,
+                color: '#fff',
+                textAlign: 'center',
+                fontSize: { xs: '2rem', md: '3rem' },
+                mb: 2,
+              }}
+            >
+              எங்களை தொடர்பு கொள்ளுங்கள்
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: 'rgba(255,255,255,0.9)',
+                textAlign: 'center',
+                maxWidth: 700,
+                mx: 'auto',
+              }}
+            >
+              உங்கள் கேள்விகள் மற்றும் பதிவுக்கு எங்களை தொடர்பு கொள்ளுங்கள்
+            </Typography>
+          </motion.div>
+        </Container>
+      </Box>
+
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          {contactInfo.map((info, index) => (
+            <Grid item xs={12} md={4} key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card
+                  sx={{
+                    height: '100%',
+                    minHeight: 200,
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
+                    transition: 'all 0.4s ease',
+                    border: '1px solid rgba(0,0,0,0.05)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    '&:hover': {
+                      transform: 'translateY(-10px)',
+                      boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+                      '& .icon-box': {
+                        transform: 'scale(1.1)',
+                      },
+                    },
+                  }}
+                >
+                  <CardContent sx={{ textAlign: 'center', py: 4, px: 3, flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <Box
+                      className="icon-box"
+                      sx={{
+                        width: 80,
+                        height: 80,
+                        borderRadius: '20px',
+                        background: info.gradient,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        margin: '0 auto',
+                        mb: 2,
+                        color: '#fff',
+                        boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
+                        transition: 'all 0.4s ease',
+                      }}
+                    >
+                      {info.icon}
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 700,
+                        color: '#1a237e',
+                        mb: 1,
+                      }}
+                    >
+                      {info.title}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: '#666',
+                        fontWeight: 500,
+                      }}
+                    >
+                      {info.value}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card
+            sx={{
+              borderRadius: 4,
+              boxShadow: '0 8px 30px rgba(0,0,0,0.08)',
+              overflow: 'hidden',
+            }}
+          >
+            <CardContent sx={{ p: { xs: 4, md: 6 } }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 700,
+                  color: '#1a237e',
+                  mb: 4,
+                  textAlign: 'center',
+                }}
+              >
+                பதிவு படிவம்
+              </Typography>
+              <Box component="form" onSubmit={handleSubmit}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="பெயர்"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          borderRadius: 2,
+                          '&:hover fieldset': {
+                            borderColor: '#ff6f00',
+                          },
+                          '&.Mui-focused fieldset': {
+                            borderColor: '#1a237e',
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="மின்னஞ்சல்"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          borderRadius: 2,
+                          '&:hover fieldset': {
+                            borderColor: '#ff6f00',
+                          },
+                          '&.Mui-focused fieldset': {
+                            borderColor: '#1a237e',
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="தொலைபேசி"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          borderRadius: 2,
+                          '&:hover fieldset': {
+                            borderColor: '#ff6f00',
+                          },
+                          '&.Mui-focused fieldset': {
+                            borderColor: '#1a237e',
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="நிறுவனம்"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          borderRadius: 2,
+                          '&:hover fieldset': {
+                            borderColor: '#ff6f00',
+                          },
+                          '&.Mui-focused fieldset': {
+                            borderColor: '#1a237e',
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="செய்தி"
+                      name="message"
+                      multiline
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          borderRadius: 2,
+                          '&:hover fieldset': {
+                            borderColor: '#ff6f00',
+                          },
+                          '&.Mui-focused fieldset': {
+                            borderColor: '#1a237e',
+                          },
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      size="large"
+                      endIcon={<Send />}
+                      sx={{
+                        background: 'linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%)',
+                        color: '#fff',
+                        fontWeight: 700,
+                        px: 5,
+                        py: 2,
+                        fontSize: '1.1rem',
+                        borderRadius: '50px',
+                        boxShadow: '0 8px 30px rgba(255, 111, 0, 0.4)',
+                        '&:hover': {
+                          background: 'linear-gradient(135deg, #ff8f00 0%, #ff6f00 100%)',
+                          transform: 'translateY(-3px)',
+                          boxShadow: '0 12px 40px rgba(255, 111, 0, 0.5)',
+                        },
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      அனுப்பவும்
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Box>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </Container>
+    </Box>
+  );
+}

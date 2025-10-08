@@ -1,0 +1,29 @@
+{
+  "title": "இணையத் தமிழர் வணிக மாநாடு 2025",
+  "subtitle": "International Tamilar Business Conclave - 2025",
+  "dates": "பிப்ரவரி 28 - மார்ச் 2, 2025",
+  "venue": {
+    "name": "Wyndham Garden i-City Shah Alam",
+    "rating": 4,
+    "location": "Shah Alam, Selangor, Malaysia",
+    "address": "i-City, 40000 Shah Alam, Selangor, Malaysia",
+    "checkIn": "பிப்ரவரி 27, 2025 - மதியம் 3:00",
+    "checkOut": "மார்ச் 3, 2025 - காலை 12:00",
+    "coordinates": {
+      "lat": 3.0738,
+      "lng": 101.5183
+    }
+  },
+  "description": "உலகம் முழுவதும் உள்ள தமிழ் தொழில் முனைவோரை ஒன்றிணைத்து, வணிக வலைப்பின்னல்களை உருவாக்கி, பொருளாதார வளர்ச்சியை ஊக்குவிக்கும் உலகளாவிய மாநாடு.",
+  "mission": "தமிழர்களின் வணிக வலிமையை உலகளவில் வெளிப்படுத்தவும், தொழில் முனைவோர்களுக்கிடையே கூட்டுத்தொழில் வாய்ப்புகளை உருவாக்கவும் நோக்கமாகக் கொண்ட மாநாடு.",
+  "dressCode": {
+    "title": "ஆடை குறியீடு",
+    "men": "ஆண்கள்: முறையான வணிக உடை அல்லது பாரம்பரிய உடை",
+    "women": "பெண்கள்: முறையான வணிக உடை அல்லது பாரம்பரிய உடை"
+  },
+  "contact": {
+    "email": "info@tamilarbusiness.org",
+    "phone": "+60 12 345 6789",
+    "website": "www.tamilarbusiness.org"
+  }
+}
