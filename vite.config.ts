@@ -5,14 +5,20 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react']
+    exclude: ['lucide-react'],
+    esbuildOptions: {
+      target: 'esnext'
+    }
   },
   server: {
     fs: {
       strict: false
     }
   },
-  esbuild: {
-    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  build: {
+    target: 'esnext',
+    commonjsOptions: {
+      include: [/node_modules/]
+    }
   }
 });
