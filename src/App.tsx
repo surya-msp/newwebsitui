@@ -34,17 +34,17 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#0f172a',
-      light: '#334155',
-      dark: '#020617',
+      main: '#6366f1',
+      light: '#818cf8',
+      dark: '#4f46e5',
     },
     secondary: {
-      main: '#f97316',
-      light: '#fb923c',
-      dark: '#ea580c',
+      main: '#f59e0b',
+      light: '#fbbf24',
+      dark: '#d97706',
     },
     background: {
-      default: '#ffffff',
+      default: '#fafbfc',
       paper: '#ffffff',
     },
   },
