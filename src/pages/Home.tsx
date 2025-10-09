@@ -129,7 +129,7 @@ export default function Home() {
       <Container maxWidth="lg" sx={{ py: { xs: 10, md: 14 } }}>
         <Grid container spacing={4} sx={{ mb: { xs: 10, md: 14 } }}>
           {stats.map((stat, index) => (
-            <Grid item xs={6} md={3} key={index}>
+            <Grid size={{ xs: 6, md: 3 }} key={index}>
               <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
                 <Card sx={{ textAlign: 'center', py: 6, borderRadius: 4, background: stat.gradient, boxShadow: '0 12px 48px rgba(0,0,0,0.15)', border: 'none', transition: 'all 0.4s ease', '&:hover': { transform: 'translateY(-12px) scale(1.05)', boxShadow: '0 20px 60px rgba(0,0,0,0.25)' } }}>
                   <Typography variant="h2" sx={{ fontWeight: 900, color: '#fff', mb: 1, fontSize: { xs: '3rem', md: '3.5rem' }, textShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
@@ -155,7 +155,7 @@ export default function Home() {
 
         <Grid container spacing={5}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
               <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}>
                 <Card sx={{ height: 380, borderRadius: 5, overflow: 'hidden', background: '#fff', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', border: '1px solid #f1f5f9', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', display: 'flex', flexDirection: 'column', position: 'relative', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: '6px', background: feature.gradient }, '&:hover': { transform: 'translateY(-20px)', boxShadow: '0 24px 60px rgba(0,0,0,0.18)', '& .icon-box': { transform: 'scale(1.15) rotate(10deg)' } } }}>
                   <CardContent sx={{ textAlign: 'center', py: 6, px: 4, flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

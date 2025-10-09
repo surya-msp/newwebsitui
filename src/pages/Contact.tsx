@@ -52,7 +52,7 @@ export default function Contact() {
       <Container maxWidth="lg" sx={{ py: { xs: 10, md: 14 } }}>
         <Grid container spacing={5} sx={{ mb: { xs: 10, md: 14 } }}>
           {contactInfo.map((info, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
                 <Card sx={{ height: 240, borderRadius: 5, overflow: 'hidden', background: '#fff', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', border: 'none', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', display: 'flex', flexDirection: 'column', position: 'relative', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: '6px', background: info.gradient }, '&:hover': { transform: 'translateY(-12px)', boxShadow: `0 20px 48px ${info.color}30`, '& .info-icon': { transform: 'scale(1.1) rotate(5deg)', background: info.gradient } } }}>
                   <CardContent sx={{ textAlign: 'center', py: 6, px: 4, flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -76,16 +76,16 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit}>
                 <Grid container spacing={4}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth label="பெயர்" variant="outlined" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} sx={{ '& .MuiOutlinedInput-root': { borderRadius: 3, '&:hover fieldset': { borderColor: '#667eea' }, '&.Mui-focused fieldset': { borderColor: '#667eea', borderWidth: 2 } }, '& .MuiInputLabel-root.Mui-focused': { color: '#667eea' } }} />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth label="மின்னஞ்சல்" type="email" variant="outlined" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} sx={{ '& .MuiOutlinedInput-root': { borderRadius: 3, '&:hover fieldset': { borderColor: '#667eea' }, '&.Mui-focused fieldset': { borderColor: '#667eea', borderWidth: 2 } }, '& .MuiInputLabel-root.Mui-focused': { color: '#667eea' } }} />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <TextField fullWidth label="செய்தி" multiline rows={6} variant="outlined" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} sx={{ '& .MuiOutlinedInput-root': { borderRadius: 3, '&:hover fieldset': { borderColor: '#667eea' }, '&.Mui-focused fieldset': { borderColor: '#667eea', borderWidth: 2 } }, '& .MuiInputLabel-root.Mui-focused': { color: '#667eea' } }} />
                   </Grid>
-                  <Grid item xs={12} sx={{ textAlign: 'center' }}>
+                  <Grid size={{ xs: 12 }} sx={{ textAlign: 'center' }}>
                     <Button type="submit" variant="contained" size="large" endIcon={<Send />} sx={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: '#fff', fontWeight: 700, px: 8, py: 2.5, fontSize: '1.125rem', borderRadius: 3, textTransform: 'none', boxShadow: '0 12px 32px rgba(102, 126, 234, 0.4)', '&:hover': { background: 'linear-gradient(135deg, #5558e3 0%, #6a3f96 100%)', transform: 'translateY(-4px)', boxShadow: '0 16px 40px rgba(102, 126, 234, 0.5)' }, transition: 'all 0.3s ease' }}>
                       அனுப்பு
                     </Button>

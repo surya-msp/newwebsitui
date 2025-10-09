@@ -1,6 +1,6 @@
-import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Box, Container, Typography, Card, CardContent, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import { LocationOn, Hotel, Restaurant, Wifi, FitnessCenter, Pool, LocalParking, BusinessCenter } from '@mui/icons-material';
+import { LocationOn, Wifi, Restaurant, FitnessCenter, Pool, LocalParking, BusinessCenter } from '@mui/icons-material';
 import eventData from '../mock/event.json';
 
 export default function Venue() {
@@ -18,7 +18,7 @@ export default function Venue() {
   const highlights = [
     { title: 'உலகத் தரம்', description: '4-நட்சத்திர சொகுசு வசதிகள்', gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: '#667eea' },
     { title: 'சிறந்த இடம்', description: 'i-City இல் அமைந்துள்ளது', gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', color: '#f093fb' },
-    { icon: <Hotel />, title: 'வசதியான தங்குமிடம்', description: 'நவீன அறைகள் மற்றும் அறைகள்', gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', color: '#4facfe' },
+    { title: 'வசதியான தங்குமிடம்', description: 'நவீன அறைகள் மற்றும் அறைகள்', gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', color: '#4facfe' },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function Venue() {
 
         <Grid container spacing={5} sx={{ mb: { xs: 10, md: 14 } }}>
           {highlights.map((highlight, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
                 <Card sx={{ height: 240, borderRadius: 5, overflow: 'hidden', background: '#fff', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', border: 'none', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', display: 'flex', flexDirection: 'column', position: 'relative', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: '6px', background: highlight.gradient }, '&:hover': { transform: 'translateY(-12px)', boxShadow: `0 20px 48px ${highlight.color}30` } }}>
                   <CardContent sx={{ textAlign: 'center', py: 6, px: 4, flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -70,7 +70,7 @@ export default function Venue() {
 
         <Grid container spacing={4}>
           {amenities.map((amenity, index) => (
-            <Grid item xs={6} sm={4} md={2} key={index}>
+            <Grid size={{ xs: 6, sm: 4, md: 2 }} key={index}>
               <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.05 }}>
                 <Card sx={{ textAlign: 'center', py: 4, borderRadius: 4, boxShadow: '0 8px 32px rgba(0,0,0,0.08)', border: 'none', transition: 'all 0.4s ease', '&:hover': { transform: 'translateY(-8px)', boxShadow: `0 16px 48px ${amenity.color}30`, '& .amenity-icon': { background: amenity.gradient, transform: 'scale(1.1) rotate(5deg)' } } }}>
                   <Box className="amenity-icon" sx={{ width: 64, height: 64, borderRadius: '20px', background: `${amenity.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto', mb: 2, color: amenity.color, transition: 'all 0.4s ease', '& .MuiSvgIcon-root': { fontSize: '2rem' } }}>

@@ -39,7 +39,7 @@ export default function Schedule() {
 
               <Grid container spacing={4}>
                 {day.sessions.map((session, sessionIndex) => (
-                  <Grid item xs={12} key={sessionIndex}>
+                  <Grid size={{ xs: 12 }} key={sessionIndex}>
                     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: sessionIndex * 0.1 }}>
                       <Card sx={{ borderRadius: 4, overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', border: 'none', transition: 'all 0.4s ease', position: 'relative', '&::before': { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: '6px', background: dayStyle.gradient }, '&:hover': { transform: 'translateX(12px)', boxShadow: `0 12px 48px ${dayStyle.color}30` } }}>
                         <CardContent sx={{ p: 5, pl: 6 }}>

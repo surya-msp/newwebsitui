@@ -14,7 +14,7 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Box
               sx={{
                 width: 50,
@@ -41,7 +41,7 @@ export default function Footer() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" sx={{ fontWeight: 700, mb: 2.5, color: '#f59e0b' }}>
               தொடர்பு
             </Typography>
@@ -95,7 +95,7 @@ export default function Footer() {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" sx={{ fontWeight: 700, mb: 2.5, color: '#f59e0b' }}>
               எங்களைப் பின்தொடரவும்
             </Typography>

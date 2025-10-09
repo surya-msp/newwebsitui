@@ -4,7 +4,7 @@ import { Business, Public } from '@mui/icons-material';
 import speakersData from '../mock/speakers.json';
 
 export default function Speakers() {
-  const speakers = speakersData.speakers;
+  const speakers = speakersData;
 
   const gradients = [
     { gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: '#667eea' },
@@ -30,7 +30,7 @@ export default function Speakers() {
           {speakers.map((speaker, index) => {
             const style = gradients[index % gradients.length];
             return (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}>
                   <Card sx={{ height: 480, borderRadius: 5, overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', border: 'none', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', display: 'flex', flexDirection: 'column', position: 'relative', '&::before': { content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: '6px', background: style.gradient, zIndex: 2 }, '&:hover': { transform: 'translateY(-16px)', boxShadow: `0 24px 60px ${style.color}30`, '& .speaker-image': { transform: 'scale(1.1)' } } }}>
                     <Box sx={{ position: 'relative', height: 240, overflow: 'hidden', background: style.gradient }}>
@@ -38,9 +38,8 @@ export default function Speakers() {
                     </Box>
                     <CardContent sx={{ flexGrow: 1, p: 4, display: 'flex', flexDirection: 'column', bgcolor: '#fff' }}>
                       <Typography variant="h6" sx={{ fontWeight: 800, color: '#1e293b', mb: 1, fontSize: '1.25rem' }}>{speaker.name}</Typography>
-                      <Typography variant="body2" sx={{ color: style.color, fontWeight: 700, mb: 2, fontSize: '0.9375rem' }}>{speaker.title}</Typography>
-                      <Typography variant="body2" sx={{ color: '#64748b', mb: 3, flexGrow: 1, fontSize: '0.9375rem', lineHeight: 1.7 }}>{speaker.bio}</Typography>
-                      <Box sx={{ display: 'flex', gap: 1.5 }}>
+                      <Typography variant="body2" sx={{ color: style.color, fontWeight: 700, mb: 2, fontSize: '0.9375rem' }}>{speaker.role}</Typography>
+                      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mt: 'auto' }}>
                         {speaker.company && (
                           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, px: 2, py: 1, borderRadius: 2, bgcolor: `${style.color}15` }}>
                             <Business sx={{ fontSize: '1rem', color: style.color }} />
