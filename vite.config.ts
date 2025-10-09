@@ -5,21 +5,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
-    include: [
-      '@mui/material',
-      '@mui/icons-material',
-      '@emotion/react',
-      '@emotion/styled',
-      'framer-motion',
-      'react-router-dom',
-      '@tanstack/react-query'
-    ],
-    force: true
+    exclude: ['lucide-react']
   },
   server: {
     fs: {
       strict: false
     }
+  },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
   }
 });
