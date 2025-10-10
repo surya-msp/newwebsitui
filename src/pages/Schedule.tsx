@@ -4,7 +4,7 @@ import { AccessTime } from '@mui/icons-material';
 import scheduleData from '../mock/schedule.json';
 
 export default function Schedule() {
-  const schedule = scheduleData.days;
+  const schedule = scheduleData;
 
   const gradients = [
     { gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: '#667eea' },
